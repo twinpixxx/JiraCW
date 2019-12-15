@@ -27,6 +27,12 @@
     <ClCompile Include="cInternationalProject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cProjectModel.h">
@@ -38,5 +44,17 @@
     <ClInclude Include="cInternationalProject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
