@@ -1,3 +1,5 @@
+#ifndef cException_HEADER
+#define cException_HEADER
 #include <iostream>
 using namespace std;
 
@@ -27,3 +29,4 @@ public:
 	listExceptions(int number) : cException(number) {};
 	void ErrorText() override;
 };
+#endif
