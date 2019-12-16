@@ -1,0 +1,24 @@
+#pragma once
+#include "cInternationalProject.h"
+#include "cProjectWithDeadline.h"
+#include "cProjectWithPriority.h"
+
+class cInternationalProjectWithDeadlineAndPriority
+	: virtual public cInternationalProject,
+	virtual public cProjectWithDeadline,
+	virtual public cProjectWithPriority
+{
+public:
+	
+	cInternationalProjectWithDeadlineAndPriority() {};
+	cInternationalProjectWithDeadlineAndPriority(std::string projectName, std::string _countryName, std::string _start, std::string _end, int _priority);
+	cInternationalProjectWithDeadlineAndPriority(const cInternationalProjectWithDeadlineAndPriority& tempObject);
+	~cInternationalProjectWithDeadlineAndPriority() {};
+
+
+
+	//	input/output operators overload
+	friend std::istream& operator >> (std::istream& is, cInternationalProjectWithDeadlineAndPriority& tempObj);
+	friend std::ostream& operator << (std::ostream& os, cInternationalProjectWithDeadlineAndPriority& tempObj);
+};
+
