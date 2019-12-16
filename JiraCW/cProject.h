@@ -1,45 +1,25 @@
 #pragma once
-#include "cProjectModel.h"
-class cProject :
-	public cProjectModel
+#include <string>
+#include "cCompanyEmployee.h"
+
+class cProject
 {
 protected:
-	//	basic project fiedls
-	std::string projectTopic;
-	std::string projectStartDate;
-	std::string projectDeadlineDate;
-	std::string projectDescription;
-	std::string projectExecutor;
+	std::string projectTitle;
+	cCompanyEmployee executor;
 public:
+	cProject() {}; //	default constructor without params
+	cProject(std::string _title, cCompanyEmployee _exec); //	constructor w/ params
+	cProject(const cProject& tempObject); //	copy constructor
+	~cProject() {}; //	destructor
 
-	cProject() {};
-	cProject(std::string _title, std::string _topic, std::string _startDate, std::string _deadline,
-		std::string _description, std::string _exec, int _priority);
-	cProject(const cProject& tempObj);
-	~cProject() {};
+	std::string getProjectTitle() { return this->projectTitle; }; //	accessor for projectTitle
+	std::string getProjectExecutor() { return this->executor.getFirstName(); }; //	accessor for projectTitle
 
-
-	//	the most relevant getters
-	std::string getProjectTopic() {
-		return this->projectTopic;
-	};
-	std::string getProjectExecutor() {
-		return this->projectExecutor;
-	};
-	std::string getProjectStartDate() {
-		return this->projectStartDate;
-	};
-	std::string getProjectDeadlineDate() {
-		return this->projectDeadlineDate;
-	};
-	std::string getProjectDescription() {
-		return this->projectDescription;
-	};
-
-
+	
 
 	//	input/output operators overload
-	friend std::istream& operator >> (std::istream& is, cProject& tempObj);
-	friend std::ostream& operator << (std::ostream& os, cProject& tempObj);
+	friend std::istream& operator >> (std::istream& is, cProject& tempObject);
+	friend std::ostream& operator << (std::ostream& os, cProject& tempObject);
 };
 
