@@ -1,28 +1,26 @@
 #pragma once
 #include "cProject.h"
+#include "cCountry.h"
+
+
 class cInternationalProject :
-	public cProject
+	virtual public cProject
 {
 protected:
-	std::string projectCountry;
+	cCountry country;
 public:
 
 	cInternationalProject() {};
-	cInternationalProject(std::string _title, std::string _topic, std::string _startDate, std::string _deadline,
-		std::string _description, std::string _exec, int _priority, std::string _country);
-	cInternationalProject(const cInternationalProject& tempObj);
+	cInternationalProject(std::string projectName, cCountry _country, cCompanyEmployee _exec);
+	cInternationalProject(const cInternationalProject& tempObject);
 	~cInternationalProject() {};
 
 
-	//	the most relevant getters
-	std::string getProjectCountry() {
-		return this->projectCountry;
-	}
-
+	std::string getCountryName() { return this->country.getCountryName(); };
 
 
 	//	input/output operators overload
-	friend std::istream& operator >> (std::istream& is, cInternationalProject& tempProjectObj);
-	friend std::ostream& operator << (std::ostream& os, cInternationalProject& tempProjectObj);
-
+	friend std::istream& operator >> (std::istream& is, cInternationalProject& tempObj);
+	friend std::ostream& operator << (std::ostream& os, cInternationalProject& tempObj);
 };
+

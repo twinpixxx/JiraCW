@@ -1,46 +1,43 @@
 #include "cInternationalProject.h"
-#include <iostream>
-#include <iomanip>
 #include "cException.h"
+#include <iomanip>
 
-//	body of copy constructor
 
-cInternationalProject::cInternationalProject(const cInternationalProject& tempObj)
-	: cProject(tempObj.projectTittle, tempObj.projectTopic, tempObj.projectStartDate,
-		tempObj.projectDeadlineDate, tempObj.projectDescription, tempObj.projectExecutor, tempObj.projectPriority),
-	projectCountry(tempObj.projectCountry) {};
+cInternationalProject::cInternationalProject(const cInternationalProject& tempObject) 
+	: cProject(tempObject.projectTitle, tempObject.executor), country(tempObject.country) {};
 
 //	body of constructor w/ params
 
-cInternationalProject::cInternationalProject(std::string _title, std::string _topic, std::string _startDate, std::string _deadline,
-	std::string _description, std::string _exec, int _priority, std::string _country) : cProject(_title, _topic, _startDate,
-		_deadline, _description, _exec, _priority), projectCountry(_country) {};
+cInternationalProject::cInternationalProject(std::string _name, cCountry _country, cCompanyEmployee _exec)
+	: cProject(_name, _exec), country(_country) {};
 
 
 //input override
 
-std::istream& operator >> (std::istream& is, cInternationalProject& tempObj)
+std::istream& operator >> (std::istream& is, cInternationalProject& tempObject)
 {
 	inputExceptions tryThis;
+	std::string tempString;
 	system("cls");
+	rewind(stdin);
 
-	is >> (cProject&)tempObj;
-	
-	cout << "¬ведите страну проекта: ";
-	tempObj.projectCountry = tryThis.inputString();
+	is >> (cProject&)tempObject;
+
+	cout << "¬ведите название страны: ";
+	tempObject.country.setCountryName(tryThis.inputString());
+
 	return is;
 }
 
 
 //output override
 
-std::ostream& operator << (std::ostream& os, cInternationalProject& tempObj)
+std::ostream& operator << (std::ostream& os, cInternationalProject& tempObject)
 {
 
-	os << (cProject&)tempObj;
+	os << (cProject&)tempObject;
 
-	os << setiosflags(ios::left) << setw(20) << tempObj.projectCountry;
-
+	os << setiosflags(ios::left) << setw(20) << tempObject.country.getCountryName();
 
 	return os;
 }
