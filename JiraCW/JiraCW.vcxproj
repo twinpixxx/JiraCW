@@ -123,23 +123,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cCompanyEmployee.cpp" />
+    <ClCompile Include="cCountry.cpp" />
     <ClCompile Include="cException.cpp" />
     <ClCompile Include="cFile.cpp" />
+    <ClCompile Include="cHuman.cpp" />
     <ClCompile Include="cInternationalProject.cpp" />
+    <ClCompile Include="cInternationalProjectWithDeadline.cpp" />
+    <ClCompile Include="cInternationalProjectWithDeadlineAndPriority.cpp" />
+    <ClCompile Include="cInternationalProjectWithPriority.cpp" />
     <ClCompile Include="cProject.cpp" />
-    <ClCompile Include="cProjectModel.cpp" />
+    <ClCompile Include="cProjectWithDeadline.cpp" />
+    <ClCompile Include="cProjectWithPriority.cpp" />
+    <ClCompile Include="cProjectWithPriorityAndDeadline.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cCompanyEmployee.h" />
+    <ClInclude Include="cCountry.h" />
     <ClInclude Include="cException.h" />
     <ClInclude Include="cFile.h" />
+    <ClInclude Include="cHuman.h" />
     <ClInclude Include="cInternationalProject.h" />
+    <ClInclude Include="cInternationalProjectWithDeadline.h" />
+    <ClInclude Include="cInternationalProjectWithDeadlineAndPriority.h" />
+    <ClInclude Include="cInternationalProjectWithPriority.h" />
     <ClInclude Include="cList.h" />
     <ClInclude Include="cProject.h" />
-    <ClInclude Include="cProjectModel.h" />
+    <ClInclude Include="cProjectWithDeadline.h" />
+    <ClInclude Include="cProjectWithPriority.h" />
+    <ClInclude Include="cProjectWithPriorityAndDeadline.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram4.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

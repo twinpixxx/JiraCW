@@ -18,7 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cProjectModel.cpp">
+    <ClCompile Include="cFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCountry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cProject.cpp">
@@ -27,23 +33,32 @@
     <ClCompile Include="cInternationalProject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cFile.cpp">
+    <ClCompile Include="cProjectWithDeadline.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cException.cpp">
+    <ClCompile Include="cProjectWithPriority.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cInternationalProjectWithDeadline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cInternationalProjectWithPriority.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cProjectWithPriorityAndDeadline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCompanyEmployee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cHuman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cInternationalProjectWithDeadlineAndPriority.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cProjectModel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cProject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cInternationalProject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -53,8 +68,41 @@
     <ClInclude Include="cException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cCountry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cProject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cInternationalProject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cProjectWithDeadline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cProjectWithPriority.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cInternationalProjectWithDeadline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cInternationalProjectWithPriority.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cProjectWithPriorityAndDeadline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cHuman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCompanyEmployee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cInternationalProjectWithDeadlineAndPriority.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram4.cd" />
   </ItemGroup>
 </Project>
