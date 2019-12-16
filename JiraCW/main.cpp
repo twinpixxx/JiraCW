@@ -1,16 +1,20 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include "cProject.h"
+#include "cProjectWithDeadline.h"
+#include "cProjectWithPriority.h"
+#include "cProjectWithPriorityAndDeadline.h"
+#include "cInternationalProject.h"
+#include "cInternationalProjectWithPriority.h"
+#include "cInternationalProjectWithDeadline.h"
+#include "cInternationalProjectWithDeadlineAndPriority.h"
+//#include "cList.h"
+//#include "cFile.h"
+#include "cException.h"
 #include <string>
 #include <conio.h>
 #include <fstream>
 #include <windows.h>
 #include <vector>
-#include "cProjectModel.h"
-#include "cProject.h"
-#include "cInternationalProject.h"
-#include "cList.h"
-#include "cFile.h"
-#include "cException.h"
 
 
 using namespace std;
@@ -57,20 +61,20 @@ int main()
 		system("cls");
 		std::cout << "JiraCW (MIT License)" << std::endl;
 		if (currentProject.length() > 0) {
-			cout << "Ваш текущий проект: " << currentProject << std::endl << std::endl;
+			cout << "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << currentProject << std::endl << std::endl;
 		} else {
-			cout << "У Вас нет текущих проектов." << currentProject << std::endl << std::endl;
+			cout << "пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ." << currentProject << std::endl << std::endl;
 		}
-			cout << "Выберите действие, которое хотите совершить:" << std::endl
-			<< "1. Добавить проект" << std::endl
-			<< "2. Посмотреть список проектов" << std::endl
-			<< "3. Удалить проект" << std::endl
-			<< "4. Изменить проект" << std::endl
-			<< "5. Поиск по проектам" << std::endl
-			<< "6. Отмена предыдущего действия" << std::endl
-			<< "7. Обновить состояние" << std::endl
-			<< "0. Выход из программы" << std::endl << std::endl
-			<< "Ваше действие: ";
+			cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ:" << std::endl
+			<< "1. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl
+			<< "2. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl
+			<< "3. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl
+			<< "4. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl
+			<< "5. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl
+			<< "6. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl
+			<< "7. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl
+			<< "0. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl << std::endl
+			<< "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 		switch (_getch())
 		{
 			case '1':
@@ -89,17 +93,17 @@ int main()
 				system("cls");
 				if (projectsList.size() > 0)
 				{
-					cout << setiosflags(ios::left) << setw(3) << "" << setw(20) << "Название" << setw(20) << "Приоритет"
-						<< setw(20) << "Тема" << setw(13) << "Дата начала" << setw(13)
-						<< "Дата окончания" << setw(30) << "Описание" << setw(20) << "Исполнитель" << setw(20) << "Страна" << endl;
-					cout << setiosflags(ios::left) << setw(3) << "" << setw(20) << "проекта" << setw(20) << "проекта"
-						<< setw(20) << "проекта" << setw(13) << "проекта" << setw(13)
-						<< "проекта" << setw(30) << "проекта" << setw(20) << "проекта" << setw(20) << "проекта" << endl;
+					cout << setiosflags(ios::left) << setw(3) << "" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
+						<< setw(20) << "пїЅпїЅпїЅпїЅ" << setw(13) << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << setw(13)
+						<< "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(30) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+					cout << setiosflags(ios::left) << setw(3) << "" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
+						<< setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(13) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(13)
+						<< "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(30) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(20) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 					projectsList.output();
 					cout << endl;
 				}
 				else {
-					cout << "Список пуст!" << endl;
+					cout << "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ!" << endl;
 				}
 					system("pause");
 					break;
@@ -114,7 +118,7 @@ int main()
 					actionRevert.insert(actionRevert.end(), tmpObj);
 					actionRevertIndex.insert(actionRevertIndex.end(), 2);
 					projectsList.pop_head();
-					cout << "Проект " << tempTitle << " успешно удален" << endl;
+					cout << "пїЅпїЅпїЅпїЅпїЅпїЅ " << tempTitle << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 				}
 				if (projectsList.size() > 1)
 				{
@@ -123,7 +127,7 @@ int main()
 					actionRevert.insert(actionRevert.end(), tmpObj);
 					actionRevertIndex.insert(actionRevertIndex.end(), 2);
 					projectsList.pop_tail();
-					cout << "Проект " << tempTitle << " успешно удален" << endl;
+					cout << "пїЅпїЅпїЅпїЅпїЅпїЅ " << tempTitle << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 				}
 				system("pause");
 				break;
@@ -131,7 +135,7 @@ int main()
 			case '4':
 			{
 				system("cls");
-				cout << "Введите номер изменяемого проекта: ";
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 				int tempNumber = inputException.inputNumber(1, projectsList.size());
 				cInternationalProject tmpObj;
 				cin >> tmpObj;
@@ -140,34 +144,34 @@ int main()
 				actionRevertIndex.insert(actionRevertIndex.end(), 3);
 				objRevertIndex.insert(objRevertIndex.end(), (tempNumber - 1));
 				projectsList[tempNumber - 1] = tmpObj;
-				cout << "Проект " << tempTitle << " успешно изменен" << endl;
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅ " << tempTitle << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 				system("pause");
 				break;
 			}
-			case '5':		//Просмотр по типу дохода
+			case '5':		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 			{
 				system("cls");
-				cout << "1. Название" << endl;
-				cout << "2. Приоритет" << endl;
-				cout << "3. Исполнитель" << endl;
-				cout << "Выберите критерий для поиска: ";
+				cout << "1. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+				cout << "2. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+				cout << "3. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 				int tempType = inputException.inputNumber(1, 3);
 				system("cls");
 				if (tempType == 1)
 				{
-					cout << "Введите название проекта для поиска: ";
+					cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 					std::string projectName = inputException.inputString();
 					cout << endl;
 					projectsList.outputByName(projectName);
 				}
 				else if (tempType == 2) {
-					cout << "Введите приоритет проекта для поиска: ";
+					cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 					int projectPriority = inputException.inputNumber(0, 3);
 					cout << endl;
 					projectsList.outputByPriority(projectPriority);
 				}
 				else if (tempType == 3) {
-					cout << "Введите имя исполнителя проекта для поиска: ";
+					cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 					std::string projectExecName = inputException.inputString();
 					cout << endl;
 					projectsList.outputByExec(projectExecName);
