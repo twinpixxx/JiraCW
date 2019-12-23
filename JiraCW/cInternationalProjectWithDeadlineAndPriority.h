@@ -11,10 +11,14 @@ class cInternationalProjectWithDeadlineAndPriority
 public:
 	
 	cInternationalProjectWithDeadlineAndPriority() {};
-	cInternationalProjectWithDeadlineAndPriority(std::string projectName, std::string _countryName, std::string _start, std::string _end, int _priority);
+	cInternationalProjectWithDeadlineAndPriority(std::string projectName, std::string _countryName, std::string _start, std::string _end,
+		int _priority, std::string _execFirstName, std::string _execLastName);
 	cInternationalProjectWithDeadlineAndPriority(const cInternationalProjectWithDeadlineAndPriority& tempObject);
 	~cInternationalProjectWithDeadlineAndPriority() {};
 
+
+
+	std::string getEndDate() { return this->projectEndDate; };
 
 
 	//	input/output operators overload

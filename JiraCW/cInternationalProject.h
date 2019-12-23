@@ -11,7 +11,7 @@ protected:
 public:
 
 	cInternationalProject() {};
-	cInternationalProject(std::string projectName, cCountry _country, cCompanyEmployee _exec);
+	cInternationalProject(std::string projectName, cCountry _country, std::string _execFN, std::string _execLN);
 	cInternationalProject(const cInternationalProject& tempObject);
 	~cInternationalProject() {};
 
@@ -23,4 +23,3 @@ public:
 	friend std::istream& operator >> (std::istream& is, cInternationalProject& tempObj);
 	friend std::ostream& operator << (std::ostream& os, cInternationalProject& tempObj);
 };
-

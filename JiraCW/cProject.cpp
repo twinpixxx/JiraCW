@@ -3,11 +3,13 @@
 #include <iomanip>
 
 
-cProject::cProject(const cProject& tempObject) : projectTitle(tempObject.projectTitle), executor(tempObject.executor) {};
+cProject::cProject(const cProject& tempObject) : projectTitle(tempObject.projectTitle), execFirstName(tempObject.execFirstName),
+	execLastName(tempObject.execLastName) {};
 
 //	body of constructor w/ params
 
-cProject::cProject(std::string _title, cCompanyEmployee _exec) : projectTitle(_title), executor(_exec) {};
+cProject::cProject(std::string _title, std::string _execFN, std::string _execLN) : projectTitle(_title), execFirstName(_execFN),
+	execLastName(_execLN) {};
 
 
 //input override
@@ -21,21 +23,11 @@ std::istream& operator >> (std::istream& is, cProject& tempObject)
 	cout << "¬ведите название проекта: ";
 	tempObject.projectTitle = tryThis.inputString();
 	rewind(stdin);
-	cout << "¬ведите им€: ";
-	tempObject.executor.setFirstName(tryThis.inputString());
+	cout << "¬ведите им€ исполнител€: ";
+	tempObject.execFirstName = tryThis.inputString();
 	rewind(stdin);
-	cout << "¬ведите фамилию: ";
-	tempObject.executor.setLastName(tryThis.inputString());
-	rewind(stdin);
-	cout << "¬ведите гражданство: ";
-	tempObject.executor.setCountryName(tryThis.inputString());
-	rewind(stdin);
-	cout << "¬ведите название компании: ";
-	tempObject.executor.setCompanyName(tryThis.inputString());
-	rewind(stdin);
-	cout << "¬ведите должность: ";
-	tempObject.executor.setPosition(tryThis.inputString());
-
+	cout << "¬ведите фамилию исполнител€: ";
+	tempObject.execLastName = tryThis.inputString();
 
 	return is;
 }
@@ -45,10 +37,8 @@ std::istream& operator >> (std::istream& is, cProject& tempObject)
 
 std::ostream& operator << (std::ostream& os, cProject& tempObject)
 {
-	os << setiosflags(ios::left) << setw(20) << tempObject.projectTitle;
-
-	os << setw(20) << tempObject.executor.getCompanyName() << setw(20) << tempObject.executor.getCountryName() << setw(20)
-		<< tempObject.executor.getFirstName() << setw(20) << tempObject.executor.getLastName()<< setw(20)
-		<< tempObject.executor.getPosition();
+	os << setiosflags(ios::left) << setw(25) << tempObject.projectTitle << setw(20)
+		<< setw(15) << tempObject.execFirstName << setw(45)
+		<< tempObject.execLastName;
 	return os;
 }

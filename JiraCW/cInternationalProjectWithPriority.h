@@ -7,7 +7,8 @@ class cInternationalProjectWithPriority
 
 public:
 	cInternationalProjectWithPriority() {};
-	cInternationalProjectWithPriority(std::string projectName, std::string _countryName, int _priority);
+	cInternationalProjectWithPriority(std::string projectName, std::string _countryName, int _priority,
+		std::string _execFirstName, std::string _execLastName);
 	cInternationalProjectWithPriority(const cInternationalProjectWithPriority& tempObject);
 	~cInternationalProjectWithPriority() {};
 

@@ -4,12 +4,12 @@
 
 
 cInternationalProject::cInternationalProject(const cInternationalProject& tempObject) 
-	: cProject(tempObject.projectTitle, tempObject.executor), country(tempObject.country) {};
+	: cProject(tempObject.projectTitle, tempObject.execFirstName, tempObject.execLastName), country(tempObject.country) {};
 
 //	body of constructor w/ params
 
-cInternationalProject::cInternationalProject(std::string _name, cCountry _country, cCompanyEmployee _exec)
-	: cProject(_name, _exec), country(_country) {};
+cInternationalProject::cInternationalProject(std::string _name, cCountry _country, std::string _execFN, std::string _execLN)
+	: cProject(_name, _execFN, _execLN), country(_country) {};
 
 
 //input override

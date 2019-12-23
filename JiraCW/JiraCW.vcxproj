@@ -123,10 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cAdministrator.cpp" />
     <ClCompile Include="cCompanyEmployee.cpp" />
     <ClCompile Include="cCountry.cpp" />
     <ClCompile Include="cException.cpp" />
-    <ClCompile Include="cFile.cpp" />
     <ClCompile Include="cHuman.cpp" />
     <ClCompile Include="cInternationalProject.cpp" />
     <ClCompile Include="cInternationalProjectWithDeadline.cpp" />
@@ -139,6 +139,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cAdministrator.h" />
     <ClInclude Include="cCompanyEmployee.h" />
     <ClInclude Include="cCountry.h" />
     <ClInclude Include="cException.h" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram4.cd" />
+    <None Include="ClassDiagram41.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

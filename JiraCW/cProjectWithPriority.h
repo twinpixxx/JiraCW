@@ -13,7 +13,7 @@ protected:
 public:
 
 	cProjectWithPriority() {};
-	cProjectWithPriority(std::string projectName, int _priority, cCompanyEmployee _exec);
+	cProjectWithPriority(std::string projectName, int _priority, std::string _execFN, std::string _execLN);
 	cProjectWithPriority(const cProjectWithPriority& tempObject);
 	~cProjectWithPriority() {};
 

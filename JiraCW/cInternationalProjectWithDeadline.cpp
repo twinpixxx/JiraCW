@@ -9,16 +9,21 @@ cInternationalProjectWithDeadline::cInternationalProjectWithDeadline(const cInte
 	this->country = tempObject.country;
 	this->projectStartDate = tempObject.projectStartDate;
 	this->projectEndDate = tempObject.projectEndDate;
+	this->execFirstName = tempObject.execFirstName;
+	this->execLastName = tempObject.execLastName;
 };
 
 //	body of constructor w/ params
 
-cInternationalProjectWithDeadline::cInternationalProjectWithDeadline(std::string projectName, std::string _countryName, std::string _start, std::string _end)
+cInternationalProjectWithDeadline::cInternationalProjectWithDeadline(std::string projectName, std::string _countryName, std::string _start, std::string _end,
+	std::string _execFirstName, std::string _execLastName)
 {
 	this->projectTitle = projectName;
 	this->country.setCountryName(_countryName);
 	this->projectStartDate = _start;
 	this->projectEndDate = _end;
+	this->execFirstName = _execFirstName;
+	this->execLastName = _execLastName;
 }
 
 
@@ -49,8 +54,8 @@ std::ostream& operator << (std::ostream& os, cInternationalProjectWithDeadline& 
 {
 	os << (cInternationalProject&)tempObject;
 
-	os << setiosflags(ios::left)  << setw(13) << tempObject.projectStartDate
-		<< setw(13) << tempObject.projectEndDate;
+	os << setiosflags(ios::left)  << setw(30) << tempObject.projectStartDate
+		<< setw(35) << tempObject.projectEndDate;
 
 	return os;
 }

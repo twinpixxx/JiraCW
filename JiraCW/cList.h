@@ -35,13 +35,13 @@ public:
 		}
 	}
 
-	//Длина списка
+	//	Size of list
 	long size()
 	{
 		return this->amount;
 	}
 
-	//Добавление с головы
+	//	Add to head
 	void push_head(T input_object)
 	{
 		if (head == nullptr)
@@ -63,8 +63,8 @@ public:
 		amount++;
 		return;
 	}
-	//Доавление в хвост
-	void push_tail(T input_object)
+	//	Add to tail
+	void pushToTAIL(T input_object)
 	{
 		if (head == nullptr)
 		{
@@ -86,7 +86,7 @@ public:
 		return;
 	}
 
-	//Удаление от головы
+	//	Delete from head
 	T pop_head()
 	{
 		if (!(head)) return T();
@@ -99,8 +99,8 @@ public:
 		amount--;
 		return data;
 	}
-	//Удаление из хвоста
-	T pop_tail()
+	//	Delete from tail
+	T popFromTAIL()
 	{
 		if (!(head)) return T();
 		T data = tail->data;
@@ -113,7 +113,7 @@ public:
 		return data;
 	}
 
-	// произвольный доступ к объектам
+	// Access to the [elements]
 	T& operator[](long num)
 	{
 		Node<T>* curr = head;
@@ -123,7 +123,7 @@ public:
 		return curr->data;
 	}
 
-	// удаление элемента из списка
+	// Delete element from list (by num)
 	void delete_element(long num)
 	{
 		Node<T>* curr = head;
@@ -149,7 +149,7 @@ public:
 	}
 
 
-	// функции для работы с итератором
+	// Iterator func
 	Node<T>* begin()
 	{
 		return head;
@@ -160,7 +160,7 @@ public:
 		return tail;
 	}
 
-	// вывод на экран содержимого списка
+	// Data output
 	void output()
 	{
 		int i = 0;
@@ -183,7 +183,7 @@ public:
 		else
 			for (Node<T>* node = head; node != nullptr; node = node->next)
 			{
-				if (node->data.getTitle() == _title)
+				if (node->data.getProjectTitle() == _title)
 				{
 					cout << setw(3) << i + 1 << node->data;
 					cout << endl;
@@ -220,7 +220,7 @@ public:
 		else
 			for (Node<T>* node = head; node != nullptr; node = node->next)
 			{
-				if (node->data.getProjectExecutor() == _exec)
+				if (node->data.getProjectExecFirstName() == _exec)
 				{
 					cout << setw(3) << i + 1 << node->data;
 					cout << endl;

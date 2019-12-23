@@ -12,7 +12,7 @@ protected:
 public:
 
 	cProjectWithDeadline() {};
-	cProjectWithDeadline(std::string projectName, std::string _start, std::string _end, cCompanyEmployee _exec);
+	cProjectWithDeadline(std::string projectName, std::string _start, std::string _end, std::string _execFN, std::string _execLN);
 	cProjectWithDeadline(const cProjectWithDeadline& tempObject);
 	~cProjectWithDeadline() {};
 

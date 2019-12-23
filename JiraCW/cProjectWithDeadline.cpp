@@ -4,12 +4,14 @@
 
 
 cProjectWithDeadline::cProjectWithDeadline(const cProjectWithDeadline& tempObject)
-	: cProject(tempObject.projectTitle, tempObject.executor), projectStartDate(tempObject.projectStartDate), projectEndDate(tempObject.projectEndDate) {};
+	: cProject(tempObject.projectTitle, tempObject.execFirstName, tempObject.execLastName),
+	projectStartDate(tempObject.projectStartDate), projectEndDate(tempObject.projectEndDate) {};
 
 //	body of constructor w/ params
 
-cProjectWithDeadline::cProjectWithDeadline(std::string projectName, std::string _start, std::string _end, cCompanyEmployee _exec)
-	: cProject(projectName, _exec), projectStartDate(_start), projectEndDate(_end) {};
+cProjectWithDeadline::cProjectWithDeadline(std::string projectName, std::string _start,
+	std::string _end, std::string _execFN, std::string _execLN)
+	: cProject(projectName, _execFN, _execLN), projectStartDate(_start), projectEndDate(_end) {};
 
 
 //input override

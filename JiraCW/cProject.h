@@ -6,16 +6,18 @@ class cProject
 {
 protected:
 	std::string projectTitle;
-	cCompanyEmployee executor;
+	std::string execFirstName;
+	std::string execLastName;
 public:
 	cProject() {}; //	default constructor without params
-	cProject(std::string _title, cCompanyEmployee _exec); //	constructor w/ params
+	cProject(std::string _title, std::string _execFN, std::string _execLN); //	constructor w/ params
 	cProject(const cProject& tempObject); //	copy constructor
 	~cProject() {}; //	destructor
 
 	std::string getProjectTitle() { return this->projectTitle; }; //	accessor for projectTitle
-	std::string getProjectExecutor() { return this->executor.getFirstName(); }; //	accessor for projectTitle
-
+	//	accessors for project exec
+	std::string getProjectExecFirstName() { return this->execFirstName; };
+	std::string getProjectExecLastName() { return this->execLastName; };
 	
 
 	//	input/output operators overload

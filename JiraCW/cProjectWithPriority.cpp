@@ -4,12 +4,12 @@
 
 
 cProjectWithPriority::cProjectWithPriority(const cProjectWithPriority& tempObject)
-	: cProject(tempObject.projectTitle, tempObject.executor), projectPriority(tempObject.projectPriority) {};
+	: cProject(tempObject.projectTitle, tempObject.execFirstName, tempObject.execLastName), projectPriority(tempObject.projectPriority) {};
 
 //	body of constructor w/ params
 
-cProjectWithPriority::cProjectWithPriority(std::string projectName, int _priority, cCompanyEmployee _exec)
-	: cProject(projectName, _exec), projectPriority(_priority) {};
+cProjectWithPriority::cProjectWithPriority(std::string projectName, int _priority, std::string _execFN, std::string _execLN)
+	: cProject(projectName, _execFN, _execLN), projectPriority(_priority) {};
 
 
 //input override

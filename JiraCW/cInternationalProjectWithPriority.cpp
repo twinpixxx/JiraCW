@@ -8,15 +8,20 @@ cInternationalProjectWithPriority::cInternationalProjectWithPriority(const cInte
 	this->projectTitle = tempObject.projectTitle;
 	this->country = tempObject.country;
 	this->projectPriority = tempObject.projectPriority;
+	this->execFirstName = tempObject.execFirstName;
+	this->execLastName = tempObject.execLastName;
 };
 
 //	body of constructor w/ params
 
-cInternationalProjectWithPriority::cInternationalProjectWithPriority(std::string projectName, std::string _countryName, int _priority)
+cInternationalProjectWithPriority::cInternationalProjectWithPriority(std::string projectName, std::string _countryName, int _priority,
+	std::string _execFirstName, std::string _execLastName)
 {
 	this->projectTitle = projectName;
 	this->country.setCountryName(_countryName);
 	this->projectPriority = _priority;
+	this->execFirstName = _execFirstName;
+	this->execLastName = _execLastName;
 }
 
 
